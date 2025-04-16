@@ -7,6 +7,7 @@ class LoginPage extends StatelessWidget {
 
   void _login(BuildContext context) async {
     if (_controller.text.isNotEmpty) {
+      //hrusnya disini cek kreden
       await SessionManager.login();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text("Login berhasil!")),

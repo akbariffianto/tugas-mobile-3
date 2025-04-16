@@ -1,0 +1,2 @@
+D:/KULIAH/MOBILE/tugas-mobile-3/android/app/.cxx/Debug/1o672we5/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/KULIAH/MOBILE/tugas-mobile-3/android/app/.cxx/Debug/1o672we5/arm64-v8a/CMakeFiles/rebuild_cache.dir

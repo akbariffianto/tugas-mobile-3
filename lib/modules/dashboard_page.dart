@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'home/home_page.dart';
-import 'anggota/anggota_page.dart';
-import 'bantuan/bantuan_page.dart';
+import 'screens/beranda/beranda_page.dart';
+import 'screens/anggota/anggota_page.dart';
+import 'screens/bantuan/bantuan_page.dart';
 
 class DashboardPage extends StatefulWidget {
   @override
@@ -12,7 +12,7 @@ class _DashboardPageState extends State<DashboardPage> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    HomePage(),
+    BerandaPage(),
     AnggotaPage(),
     BantuanPage(),
   ];
