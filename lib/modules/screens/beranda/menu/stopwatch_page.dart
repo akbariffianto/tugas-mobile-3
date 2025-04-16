@@ -101,7 +101,7 @@ class _StopwatchPageState extends State<StopwatchPage> {
                       child: Text(
                         _formatTime(_stopwatch.elapsed),
                         style: TextStyle(
-                          fontSize: 48,
+                          fontSize: 40,
                           fontWeight: FontWeight.bold,
                           color: _isRunning
                               ? Colors.blue.shade700

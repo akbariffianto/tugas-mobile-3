@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AnggotaPage extends StatelessWidget {
-  final List<String> anggota = ['Fahmi', 'Dina', 'Reza'];
+  final List<String> anggota = [
+    'Akbar Ariffianto (123220004)',
+    'Fahmi Kariem     (123220028)',
+    'Windy Claudia N (123220029)'
+  ];
 
   @override
   Widget build(BuildContext context) {
