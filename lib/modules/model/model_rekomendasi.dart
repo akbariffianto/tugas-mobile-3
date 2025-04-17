@@ -17,3 +17,4 @@ class ModelRekomendasi {
     this.favorite = false,
   });
 }
+

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tugas_tpm_3/modules/screens/beranda/menu/situs_rekomendasi_page.dart';
 import 'package:tugas_tpm_3/modules/screens/beranda/menu/tracking_lbs_page.dart';
+import 'package:tugas_tpm_3/core/session/session_manager.dart';
 
 import 'menu/jenis_bilangan_page.dart';
-// import 'menu/tracking_lbs_page.dart';
 import 'menu/konversi_waktu_page.dart';
 import 'menu/stopwatch_page.dart';
-// import 'menu/situs_rekomendasi_page.dart';
 
 class BerandaPage extends StatelessWidget {
   final List<_MenuItem> _menuItems = [
@@ -23,26 +22,57 @@ class BerandaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Beranda")),
-      body: ListView.builder(
-        padding: EdgeInsets.all(16),
-        itemCount: _menuItems.length,
-        itemBuilder: (context, index) {
-          final item = _menuItems[index];
-          return Card(
-            margin: EdgeInsets.symmetric(vertical: 10),
-            child: ListTile(
-              leading: Icon(item.icon, size: 32),
-              title: Text(item.title),
-              trailing: Icon(Icons.arrow_forward_ios),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => item.page),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.all(16),
+            color: Colors.blue.shade50,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Welcome,",
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                Text(
+                  SessionManager.getUsername() ?? "User",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.all(16),
+              itemCount: _menuItems.length,
+              itemBuilder: (context, index) {
+                final item = _menuItems[index];
+                return Card(
+                  margin: EdgeInsets.symmetric(vertical: 10),
+                  child: ListTile(
+                    leading: Icon(item.icon, size: 32),
+                    title: Text(item.title),
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => item.page),
+                      );
+                    },
+                  ),
                 );
               },
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }

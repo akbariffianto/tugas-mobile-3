@@ -2,6 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class SessionManager {
   static const _keyLogin = 'isLoggedIn';
+  static String? _username;
 
   static Future<bool> isLoggedIn() async {
     final prefs = await SharedPreferences.getInstance();
@@ -16,5 +17,13 @@ class SessionManager {
   static Future<void> logout() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_keyLogin);
+  }
+
+  static void setUsername(String username) {
+    _username = username;
+  }
+
+  static String? getUsername() {
+    return _username;
   }
 }
