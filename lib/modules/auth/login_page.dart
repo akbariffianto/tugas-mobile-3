@@ -114,14 +114,6 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
-            // Link untuk pendaftaran
-            TextButton(
-              onPressed: () {
-                // Navigasi ke halaman daftar (opsional)
-              },
-              child: Text("Don't have an account? Sign Up"),
-            ),
           ],
         ),
       ),
